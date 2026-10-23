@@ -2,7 +2,10 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
 
-declare const process: { env: Record<string, string | undefined> };
+declare const process: {
+  env: Record<string, string | undefined>;
+  cwd: () => string;
+};
 
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
